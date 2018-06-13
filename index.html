@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .box{
+            width: 1010px;
+            height: 400px;
+            margin:100px auto;
+        }
+        .box div{
+            float:left;
+            width: 200px;
+            height: 400px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+   $(function(){
+       $('.box div').each(function(i,e){
+           $(e).css('background','url("images/'+ (i+1) +'.jpg")');
+       }).hover(function(){
+           $(this).stop().animate({width:600},500).siblings().stop().animate({width:100},500);
+       },function(){
+           $('.box div').stop().animate({width:200},500);
+       })
+   })
+   // $(".box div").each(function(i,e){
+   //     $(e).css('background' , 'url("images/'+ (i+1) +'.jpg")');
+   // }).hover(function(){
+   //     $(this).stop().animate({width:600},500).siblings().stop().animate({width:100},500);
+   // },function(){
+   //     $('.box div').stop().animate({width:200},500);
+   // })
+
+
+</script>
+</html>
